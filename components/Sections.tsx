@@ -1,8 +1,8 @@
 'use client';
 
-import React from "react";
 import { motion } from "framer-motion";
 
+// Card component stays exactly the same
 function Card({ title, desc, img }: { title: string; desc: string; img: string }) {
   return (
     <motion.div
@@ -49,11 +49,16 @@ function Card({ title, desc, img }: { title: string; desc: string; img: string }
   );
 }
 
-export function Features() {
+// --- Updated Features component ---
+interface FeaturesProps {
+  className?: string; // <-- allow passing className from page.tsx
+}
+
+export function Features({ className }: FeaturesProps) {
   return (
     <section 
       id="features" 
-      className="section-padding bg-gradient-to-b from-white/5 to-transparent dark:from-black/5 relative overflow-hidden"
+      className={`section-padding bg-gradient-to-b from-white/5 to-transparent dark:from-black/5 relative overflow-hidden ${className || ""}`}
     >
       {/* Cinematic background elements */}
       <div className="absolute inset-0 -z-10">
@@ -70,25 +75,25 @@ export function Features() {
           className="text-center mb-16"
         >
          <motion.span
-  className="text-sm font-medium bg-clip-text text-transparent bg-gradient-to-r from-primary to-pink-500 drop-shadow-[0_0_6px_rgba(0,0,0,0.5)] inline-block mb-3"
-  initial={{ opacity: 0, y: 10 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.2 }}
-  viewport={{ once: true }}
->
-  Features
-</motion.span>
+          className="text-sm font-medium bg-clip-text text-transparent bg-gradient-to-r from-primary to-pink-500 drop-shadow-[0_0_6px_rgba(0,0,0,0.5)] inline-block mb-3"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          Features
+        </motion.span>
 
           <motion.h2
-  className="text-4xl md:text-5xl font-bold mb-5 bg-clip-text text-transparent 
-             bg-gradient-to-r from-white via-gray-300 to-gray-500 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.3 }}
-  viewport={{ once: true }}
->
-  Powerful capabilities
-</motion.h2>
+            className="text-4xl md:text-5xl font-bold mb-5 bg-clip-text text-transparent 
+                       bg-gradient-to-r from-white via-gray-300 to-gray-500 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            Powerful capabilities
+          </motion.h2>
           <motion.p
             className="max-w-2xl mx-auto opacity-80 text-lg"
             initial={{ opacity: 0 }}
@@ -126,16 +131,14 @@ export function Features() {
         >
           <motion.button
             className="px-8 py-4 rounded-xl bg-gradient-to-br from-primary via-pink-500 to-accent text-white font-medium shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-[1.03] active:scale-95 relative overflow-hidden"
-  whileHover={{ 
-    boxShadow: "0 10px 30px -5px rgba(124, 58, 237, 0.5)",
-    y: -3
-  }}
-  whileTap={{ scale: 0.97 }}
->
-  <span className="relative z-10 animate-text-shimmer">Explore all features</span>
-  
-  {/* Glow ring effect */}
-  <span className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary via-pink-500 to-accent opacity-0 hover:opacity-30 blur-lg transition-opacity duration-500"></span>
+            whileHover={{ 
+              boxShadow: "0 10px 30px -5px rgba(124, 58, 237, 0.5)",
+              y: -3
+            }}
+            whileTap={{ scale: 0.97 }}
+          >
+            <span className="relative z-10 animate-text-shimmer">Explore all features</span>
+            <span className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary via-pink-500 to-accent opacity-0 hover:opacity-30 blur-lg transition-opacity duration-500"></span>
           </motion.button>
         </motion.div>
       </div>
@@ -143,6 +146,7 @@ export function Features() {
   );
 }
 
+// Footer stays exactly the same
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
