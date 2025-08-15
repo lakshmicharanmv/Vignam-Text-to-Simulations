@@ -1,8 +1,12 @@
-export default function YouTubeSection() {
+interface YouTubeSectionProps {
+  className?: string;
+}
+
+export default function YouTubeSection({ className }: YouTubeSectionProps) {
   return (
     <section
       id="video"
-      className="relative w-full h-screen bg-black overflow-hidden"
+      className={`relative w-full h-screen bg-black overflow-hidden ${className || ""}`}
     >
       {/* YouTube Video Fullscreen */}
       <iframe
