@@ -4,8 +4,7 @@ import { Environment, OrbitControls, Stage, useGLTF } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense, useRef } from "react";
 import * as THREE from "three";
-
-type GLTFResult = ReturnType<typeof useGLTF>;
+import { GLTF } from "three-stdlib"; // <-- Added this import
 
 interface Hero3DProps {
   className?: string;
@@ -13,7 +12,7 @@ interface Hero3DProps {
 
 function Model() {
   const group = useRef<THREE.Group>(null!);
-  const gltf = useGLTF("/assets/model.glb") as GLTFResult;
+  const gltf = useGLTF("/assets/model.glb") as GLTF; // <-- Updated type here
 
   useFrame((_, delta) => {
     if (group.current) {
