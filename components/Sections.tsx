@@ -146,13 +146,16 @@ export function Features({ className }: FeaturesProps) {
   );
 }
 
-// Footer stays exactly the same
-export function Footer() {
+interface FooterProps {
+  className?: string;
+}
+
+export function Footer({ className }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
     <motion.footer
-      className="py-16 border-t border-white/10 bg-gradient-to-b from-white/5 to-transparent dark:from-black/20 relative overflow-hidden"
+      className={`py-16 border-t border-white/10 bg-gradient-to-b from-white/5 to-transparent dark:from-black/20 relative overflow-hidden ${className || ""}`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -168,7 +171,6 @@ export function Footer() {
       
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          
           {/* Logo with gradient animation */}
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
@@ -181,7 +183,7 @@ export function Footer() {
             </span>
           </motion.div>
 
-          {/* Social links with glow effect */}
+          {/* Social links */}
           <motion.div
             className="flex gap-6"
             initial={{ opacity: 0 }}
