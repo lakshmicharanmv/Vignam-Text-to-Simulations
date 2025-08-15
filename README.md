@@ -1,39 +1,62 @@
-# Vignam Landing (Assignment)
+# 🎯 Vignam — Text to Simulations
 
-Tech stack: **Next.js (TypeScript)**, **Tailwind CSS**, **@react-three/fiber**, **@react-three/drei**, **three**.
+Vignam is a futuristic web platform that converts **plain text descriptions** into **interactive 3D scientific simulations** with realistic metallic finishes and immersive environment lighting. Built using **React.js**, **Tailwind CSS**, and **Framer Motion**, it offers a smooth, modern, and responsive user experience.
 
-## Quickstart
+---
 
+## ✨ Features
+- 🔤 **Text-to-Simulation** — Generate interactive scientific simulations from text.
+- 🎨 **Stunning Visuals** — Metallic finishes with environment-based lighting.
+- 📱 **Fully Responsive** — Works perfectly on mobile, tablet, and desktop.
+- 🎞 **Smooth Animations** — Micro-interactions powered by Framer Motion.
+- 🎥 **Interactive Demo** — Explore pre-built scientific simulations instantly.
+- 💎 **Modern UI Design** — Gradient effects, glassmorphism, and futuristic style.
+
+---
+
+
+## 🛠 Tech Stack
+| Technology       | Purpose                              |
+|------------------|--------------------------------------|
+| React.js         | Frontend UI framework                |
+| Tailwind CSS     | Responsive utility-first styling     |
+| Framer Motion    | Animation & interaction effects      |
+| Vite             | Fast development build tool          |
+| Firebase *(opt)* | Hosting and backend integration      |
+
+---
+
+## ⚡ Installation & Setup
 ```bash
+# 1. Clone the repository
+git clone https://github.com/yourusername/vignam.git
+
+# 2. Navigate to project folder
+cd vignam
+
+# 3. Install dependencies
 npm install
+
+# 4. Start the development server
 npm run dev
-# open http://localhost:3000
-```
 
-## Assets
+# 5. Open in browser
+http://localhost:5173
 
-This repo already includes:
+📂 Folder Structure
+Vignam/
+├── public/         # Static assets
+├── src/
+│   ├── components/ # Reusable UI components
+│   ├── pages/      # Page-level views
+│   ├── App.jsx     # Main application component
+│   ├── index.css   # Global Tailwind styles
+│   └── main.jsx    # App entry point
+├── package.json
+└── README.md
 
-- `/public/assets/model.glb` (copied from your uploaded GLB)
-- `/public/assets/environment.exr` (EXR environment used for metallic reflections)
-- `/public/assets/design.mp4` (your reference design video)
+📜 License
 
-If you replace assets, keep the same paths or update `components/Hero3D.tsx`.
-
-## Deployment
-
-- Push to GitHub and deploy on **Vercel** (recommended).
-- No extra config is needed.
-
-## Notes
-
-- The metallic look is achieved via `<Environment files="/assets/environment.exr" />`.
-- The model is animated with a subtle rotation and float in `Hero3D.tsx`.
-- Video section embeds the required YouTube link starting at 10s.
-- Dummy images are pulled from Unsplash in `Sections.tsx`.
-
-
-## Assets to Add
-Place your provided `landing_page_motor.glb` as `public/assets/model.glb`.
-Place your provided `forest.exr` as `public/assets/environment.exr`.
-Optional: Add the reference video as `public/assets/design.mp4`.
+📜 License
+This project was created as part of an internship assignment.
+You are welcome to modify and adapt it for educational purposes.
